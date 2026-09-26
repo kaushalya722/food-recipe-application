@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
 * {
   padding: 0;
@@ -7,66 +7,90 @@
   font-family: "Poppins", sans-serif;
 }
 
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* Header/Navbar Styling */
 header {
-  width: 100vw;
+  width: 100%;
+  height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 1px 0 5px rgba(0, 0, 0, 0.2);
+  padding: 0 4rem;
   position: fixed;
-  top:0;
-  z-index: 10;
+  top: 0;
+  left: 0;
+  z-index: 100;
   background-color: #ffffff;
 }
 
-header ul{
-  width: 40%;
-  height: 50px;
+header h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+header ul {
   display: flex;
-  justify-content: space-evenly;
   align-items: center;
-}
-
-header ul li{
+  gap: 2.5rem;
   list-style: none;
-  cursor: pointer;
 }
 
-li a{
-  color: black;
-  transition: all 0.3s;
-  padding:2px 10px;
-  border-radius: 10px;
-}
-
-li a:hover{
-  color:black;
-}
-
-li .login{
-  font-size: 16px;
+header ul li a {
+  text-decoration: none;
+  color: #4b5563;
+  font-size: 1rem;
   font-weight: 500;
+  transition: color 0.2s ease;
 }
 
-header h2{
-  margin-left: 1rem;
+header ul li a:hover {
+  color: #111827;
 }
 
-section{
-  height: 100vh;
-  width: 90%;
-  margin: 0 auto;
-}
-
-.home{
-  display: flex;
-  margin-top: 6rem;
-  gap:10rem;
+/* Main Hero Section */
+.home-container {
+  min-height: 100vh;
   position: relative;
 }
 
-.home .left h1{
-  margin-bottom: 1rem;
+.home {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 8rem 2rem 2rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+.home .left {
+  flex: 1.2;
+}
+
+.home .left h1 {
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 1.2rem;
+  line-height: 1.1;
+}
+
+.home .left h5 {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 2rem;
 }
 
 .home button{
@@ -83,13 +107,41 @@ section{
   background-color: #2c4860;
 }
 
-.home .left h5{
-  margin:2rem 0;
+
+/* Hero Image Right Side */
+.home .right {
+  flex: 0.8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.bg svg{
-  position: absolute;
+.home img{
+  width: 340px;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Background Wave (Stretched edge-to-edge) */
+.bg {
+  position: fixed;
+  left: 0;
+  right: 0;
   bottom: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.bg svg {
+  display: block;
+  width: 100%;
+  min-width: 100%;
+  height: 280px;
 }
 
 .card-container{
@@ -255,6 +307,7 @@ section{
   background-color: #213547;
   position: fixed;
   bottom: 0;
+  left: 0;
   text-align: center;
   margin-top: 1rem;
   padding-top: 2px;
